@@ -1,7 +1,8 @@
 (function(exports){
-  function TTT(){
+  function TTT(rules = new Rules()){
     this.grid = [[" "," "," "],[" "," "," "],[" "," "," "]];
     this.turn = "X";
+    this.rules = rules
   }
 
   TTT.prototype.showGrid = function() {
@@ -28,23 +29,6 @@
       this.turn = "X";
     };
   };
-
-  TTT.prototype.isGameOverHorizontially = function() {
-    for (var i = 0; i <= 2; i++) {
-      if ((this.grid[i][0] == this.grid[i][1]) && (this.grid[i][1] == this.grid[i][2])) {
-        return true;
-      };
-    };
-  };
-
-  TTT.prototype.isGameOverVertically = function() {
-    for (var i = 0; i <= 2; i++) {
-      if ((this.grid[i][0] == this.grid[i][1]) && (this.grid[i][1] == this.grid[i][2])) {
-        return true;
-      };
-    };
-  };
-
 
   exports.TTT = TTT;
 
