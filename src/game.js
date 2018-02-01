@@ -1,11 +1,12 @@
 (function(exports){
   function TTT(){
-    this.grid = [[null,null,null],[null,null,null],[null,null,null]];
+    this.grid = [[" "," "," "],[" "," "," "],[" "," "," "]];
     this.turn = "X";
   }
 
   TTT.prototype.showGrid = function() {
-    return this.grid;
+    return `------------- \n | ${this.grid[0][0]} | ${this.grid[0][1]} | ${this.grid[0][2]} | \n ------------- \n | ${this.grid[1][0]} | ${this.grid[1][1]} | ${this.grid[1][2]} | \n ------------- \n | ${this.grid[2][0]}`+
+    ` | ${this.grid[2][1]} | ${this.grid[2][2]} | \n -------------`
   };
 
   TTT.prototype.takeTurn = function(x,y) {
@@ -15,7 +16,7 @@
   };
 
   TTT.prototype.isPositionFree = function(x,y) {
-    if (this.grid[x][y] != null) {
+    if (this.grid[x][y] != " ") {
       throw new Error("Spot has already been taken");
     };
   };
@@ -25,6 +26,22 @@
       this.turn = "O";
     } else if (this.turn === "O") {
       this.turn = "X";
+    };
+  };
+
+  TTT.prototype.isGameOverHorizontially = function() {
+    for (var i = 0; i <= 2; i++) {
+      if ((this.grid[i][0] == this.grid[i][1]) && (this.grid[i][1] == this.grid[i][2])) {
+        return true;
+      };
+    };
+  };
+
+  TTT.prototype.isGameOverVertically = function() {
+    for (var i = 0; i <= 2; i++) {
+      if ((this.grid[i][0] == this.grid[i][1]) && (this.grid[i][1] == this.grid[i][2])) {
+        return true;
+      };
     };
   };
 
