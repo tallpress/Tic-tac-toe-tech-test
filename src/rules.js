@@ -2,12 +2,24 @@
   function Rules() {
   };
 
+  Rules.prototype.isGameOver = function(grid){
+    if (this.isGameOverVertically(grid)) {
+      return true;
+    } else if (this.isGameOverDiagonally(grid)) {
+      return true;
+    } else if (this.isGameOverHorizontially(grid)) {
+      return true;
+    } else {
+      return false;
+    };
+  };
+
   Rules.prototype.isGameOverHorizontially = function(grid) {
     for (var i = 0; i <= 2; i++) {
       if ((grid[i][0] == grid[i][1]) && (grid[i][1] == grid[i][2])) {
         return true;
         break;
-      }
+      };
     };
   };
 
@@ -20,7 +32,7 @@
     }
   }
 
-  Rules.prototype.isGameOverdiagonally = function(grid){
+  Rules.prototype.isGameOverDiagonally = function(grid){
     if ((grid[0][0] == grid[1][1]) && (grid[1][1] == grid[2][2])) {
       return true;
     } else if ((grid[0][2] == grid[1][1]) && (grid[1][1] == grid[2][0])) {
