@@ -1,2 +1,1 @@
-# Tic-tac-toe-tech-test
-practise tech test
+# Tic-tac-toe
