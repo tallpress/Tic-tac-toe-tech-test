@@ -1,14 +1,10 @@
 (function(exports){
   function TTT(rules = new Rules()){
-    this.grid = [[" "," "," "],[" "," "," "],[" "," "," "]];
+    this.grid = [[[],[],[]],[[],[],[]],[[],[],[]]];
     this.turn = "X";
     this.rules = rules
   }
 
-  TTT.prototype.showGrid = function() {
-    return `------------- \n | ${this.grid[0][0]} | ${this.grid[0][1]} | ${this.grid[0][2]} | \n ------------- \n | ${this.grid[1][0]} | ${this.grid[1][1]} | ${this.grid[1][2]} | \n ------------- \n | ${this.grid[2][0]}`+
-    ` | ${this.grid[2][1]} | ${this.grid[2][2]} | \n -------------`
-  };
 
   TTT.prototype.takeTurn = function(x,y) {
     this.isPositionFree(x,y);
@@ -17,7 +13,7 @@
   };
 
   TTT.prototype.isPositionFree = function(x,y) {
-    if (this.grid[x][y] != " ") {
+    if (this.grid[x][y] == "X" || this.grid[x][y] == "Y") {
       throw new Error("Spot has already been taken");
     };
   };

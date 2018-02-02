@@ -5,7 +5,7 @@ describe("Game", function() {
   });
 
   it("should be able to initialize the game with a grid", function() {
-    expect(game.grid).toEqual([[" "," "," "],[" "," "," "],[" "," "," "]]);
+    expect(game.grid).toEqual([[[],[],[]],[[],[],[]],[[],[],[]]]);
   });
 
   it("should be able to place a X on specified spot", function() {

@@ -27,7 +27,6 @@
     for (var i = 0; i <= 2; i++) {
       if ((grid[0][i] == grid[1][i]) && (grid[1][i] == grid[2][i])) {
         return true;
-        break;
       }
     }
   }
