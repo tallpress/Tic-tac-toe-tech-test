@@ -16,7 +16,7 @@ describe("Rules", function() {
         grid[0][1] = "O";
         grid[0][2] = "X";
         var rules = new Rules();
-        expect(rules.isGameOverHorizontially(grid)).toEqual(true);
+        expect(rules.isGameOverHorizontially(grid)).toEqual(false);
       });
 
       it("should not be met if the three in a row do not match in row 2", function() {
@@ -25,7 +25,7 @@ describe("Rules", function() {
         grid[1][2] = "0";
         grid[2][2] = "X";
         var rules = new Rules();
-        expect(rules.isGameOverHorizontially(grid)).toEqual(true);
+        expect(rules.isGameOverHorizontially(grid)).toEqual(false);
       });
 
       it("should be met if the three in a row are in row two", function() {

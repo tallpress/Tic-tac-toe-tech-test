@@ -18,9 +18,9 @@
     for (var i = 0; i <= 2; i++) {
       if ((grid[i][0] == grid[i][1]) && (grid[i][1] == grid[i][2])) {
         return true;
-        break;
-      };
-    };
+      }
+    }
+    return false;
   };
 
   Rules.prototype.isGameOverVertically = function(grid) {
@@ -29,6 +29,7 @@
         return true;
       }
     }
+    return false;
   }
 
   Rules.prototype.isGameOverDiagonally = function(grid){
